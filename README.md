@@ -19,6 +19,7 @@ netdiscover.scan(options).then((hosts) => {
 ## Persistent Scan
 ```javascript
 const netdiscover = require('netdiscover-node')
+
 netdiscover.on('newHost', (host) => {
   console.log(host)
   // { ip: '', mac: '', count: '', len: '', vendor: ''}

@@ -3,7 +3,12 @@
 A simple nodejs wrapper around the netdiscover tool
 
 # Installation
-First ensure `netdiscover` is installed on your system. Then install the nodejs netdiscover module.
+First ensure `netdiscover` is installed on your system.
+
+Then install via npm
+```
+npm install netdiscover-node
+```
 
 # Usage
 ## One Time Scan

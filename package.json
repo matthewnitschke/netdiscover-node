@@ -1,7 +1,7 @@
 {
   "name": "netdiscover-node",
   "version": "1.0.1",
-  "main": "index.js",
+  "main": "src/netdiscover.js",
   "repository": "https://github.com/matthewnitschke/netdiscover-node.git",
   "author": "Matthew <matthewcnitschke@gmail.com>",
   "license": "MIT"

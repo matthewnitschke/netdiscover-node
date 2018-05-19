@@ -4,5 +4,12 @@
   "main": "src/netdiscover.js",
   "repository": "https://github.com/matthewnitschke/netdiscover-node.git",
   "author": "Matthew <matthewcnitschke@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1"
+  }
 }

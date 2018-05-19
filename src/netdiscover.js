@@ -58,6 +58,7 @@ let events = {
 module.exports = {
     scan: (options) => {
         return new Promise((resolve, reject) => {
+            console.log(parseOptions(options))
             exec(`netdiscover ${parseOptions(options)} -N -P`, (error, stdout, stderr) => {
                 let parsedOutput = stdout.trim().split('\n')
 

@@ -18,19 +18,20 @@ const optionsMapper = {
 let discover;
 
 function parseLine(line){
-    let parts = /([^ ]*) *([^ ]*) *([^ ]*) *([^ ]*) *(.*)/gmi.exec(line.trim())
+    let parts = /(\d*\.\d*.\d*.\d*) *([A-z\d]*:[A-z\d]*:[A-z\d]*:[A-z\d]*:[A-z\d]*:[A-z\d]*) *(\d*) *(\d*) *(.*)/gmi.exec(line.trim())
 
-    return {
-        ip: parts[1],
-        mac: parts[2],
-        count: parts[3],
-        len: parts[4],
-        vendor: parts[5]
+    if (parts){
+        return {
+            ip: parts[1],
+            mac: parts[2],
+            count: parts[3],
+            len: parts[4],
+            vendor: parts[5]
+        }
     }
-    
 }
 
-function parseOptions(options) {
+function parseOptions(options = {}) {
     let parsedOptions = Object.keys(options).map(key => {
         if (optionsMapper.hasOwnProperty(key)){
             if (typeof options[key] === 'boolean'){
@@ -47,7 +48,10 @@ function parseOptions(options) {
 }
 
 function onData(data) {
-    events.newHost(parseLine(data.toString()))
+    let parsedLine = parseLine(data.toString())
+    if (parsedLine){
+        events.newHost(parsedLine)
+    }
 }
 
 function onError(data) {

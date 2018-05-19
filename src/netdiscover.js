@@ -1,4 +1,10 @@
 const { exec, spawn } = require('child_process')
+const isRoot = require('is-root')
+
+if (!isRoot()){
+    throw new Error("netdiscover requires root")
+}
+
 
 // mapps the passed in options into their cli counterparts
 const optionsMapper = {
@@ -45,7 +51,7 @@ function onData(data) {
 }
 
 function onError(data) {
-   
+   throw new Error(data)
 }
 
 function onClose(code) {
@@ -58,8 +64,8 @@ let events = {
 module.exports = {
     scan: (options) => {
         return new Promise((resolve, reject) => {
-            console.log(parseOptions(options))
             exec(`netdiscover ${parseOptions(options)} -N -P`, (error, stdout, stderr) => {
+                if (error) { throw new Error(error) }
                 let parsedOutput = stdout.trim().split('\n')
 
                 // remove last two lines which contain summaries and whitspace

@@ -5,13 +5,7 @@
   "repository": "https://github.com/matthewnitschke/netdiscover-node.git",
   "author": "Matthew <matthewcnitschke@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "test": "mocha"
-  },
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^5.1.1"
-  },
+  "devDependencies": {},
   "dependencies": {
     "is-root": "^2.0.0"
   }

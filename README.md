@@ -2,7 +2,7 @@
 
 A simple nodejs wrapper around the netdiscover tool
 
-Note: I have been having troubles with the accuracy of netdiscover. For a more accurate network scanner check out (fing-node)[https://github.com/matthewnitschke/fing-node]
+Note: I have been having troubles with the accuracy of netdiscover. For a more accurate network scanner check out [fing-node](https://github.com/matthewnitschke/fing-node)
 
 # Installation
 First ensure `netdiscover` is installed on your system.
